@@ -1,4 +1,7 @@
 import inquirer from "inquirer";
+import Manager from "./lib/Manager";
+import Engineer from "./lib/Engineer";
+import Intern from "./lib/Intern";
 
 const start = async () => {
   const team = {
@@ -31,7 +34,7 @@ const start = async () => {
     },
   ]);
 
-  team.managers.push(manager);
+  team.managers.push(new Manager(manager.name, manager.id, manager.email, manager.officeNumber));
 
   // Menu
   const answers = await inquirer.prompt([
@@ -65,12 +68,12 @@ const start = async () => {
       },
       {
         type: "input",
-        name: "officeNumber",
-        message: "What is the engineer's office number?",
+        name: "github",
+        message: "What is the engineer's github username?",
       },
     ]);
 
-    team.engineers.push(engineer);
+    team.engineers.push(new Engineer(engineer.name, engineer.id, engineer.email, engineer.github));
   }
 
   if (answers.menuOption == "Add intern") {
@@ -93,16 +96,15 @@ const start = async () => {
       },
       {
         type: "input",
-        name: "officeNumber",
-        message: "What is the intern's office number?",
+        name: "school",
+        message: "What is the intern's school?",
       },
     ]);
 
-    team.interns.push(intern);
+    team.interns.push(new Intern(intern.name, intern.id, intern.email, intern.school));
   }
 
   if (answers.menuOption == "Finish") {
-    
   }
 };
 
