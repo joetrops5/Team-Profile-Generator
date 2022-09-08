@@ -3,6 +3,7 @@ import Manager from "./lib/Manager.js";
 import Engineer from "./lib/Engineer.js";
 import Intern from "./lib/Intern.js";
 import { generateRoster } from "./src/template-helpers.js";
+import fs from "fs";
 
 const start = async () => {
   const team = {
@@ -48,7 +49,7 @@ const start = async () => {
       },
     ]);
 
-    // NOTE: answers.menuOption is the user's choice
+    // answers.menuOption is the user's choice
 
     if (answers.menuOption == "Add engineer") {
       // Engineer
@@ -109,7 +110,7 @@ const start = async () => {
     }
 
     if (answers.menuOption == "Finish") {
-      console.log(generateRoster(team));
+      fs.writeFileSync("./dist/index.html", generateRoster(team));
       process.exit();
     }
   }

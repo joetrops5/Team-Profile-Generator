@@ -13,7 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    /* NOTE: Scale everything down */
+    /* Scale everything down */
     font-size: 0.7em;
 }
 
@@ -61,3 +61,4 @@ body > main {
     padding: 1em;
     border: 1px solid #CCC;
 }
+

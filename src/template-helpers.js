@@ -3,10 +3,10 @@ function getIcon(role) {
     return "☕";
   }
   if (role == "Engineer") {
-    return "☕";
+    return "👓";
   }
   if (role == "Intern") {
-    return "☕";
+    return "🧑‍🎓";
   }
 }
 
@@ -38,7 +38,7 @@ export function generateRoster(team) {
                 </header>
                 <main>
                   <div>ID: ${manager.getId()}</div>
-                  <div>Email: ${manager.getEmail()}</div>
+                  <div>Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></div>
                   <div>Office number: ${manager.getOfficeNumber()}</div>
                 </main>
               </div>
@@ -56,8 +56,8 @@ export function generateRoster(team) {
                 </header>
                 <main>
                   <div>ID: ${engineer.getId()}</div>
-                  <div>Email: ${engineer.getEmail()}</div>
-                  <div>GitHub: ${engineer.getGithub()}</div>
+                  <div>Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></div>
+                  <div>GitHub: <a href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></div>
                 </main>
               </div>
             `
@@ -74,7 +74,7 @@ export function generateRoster(team) {
                 </header>
                 <main>
                   <div>ID: ${intern.getId()}</div>
-                  <div>Email: ${intern.getEmail()}</div>
+                  <div>Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></div>
                   <div>School: ${intern.getSchool()}</div>
                 </main>
               </div>
